@@ -416,8 +416,8 @@ Environmental Training Certification
   };
 
   const updateSchedule = (scheduleId: string, newDate: string, newTime: string) => {
-    setSchedules(prev => prev.map(schedule => 
-      schedule.id === scheduleId 
+    setSchedules(prev => prev.map(schedule =>
+      schedule.id === scheduleId
         ? { ...schedule, date: newDate, time: newTime }
         : schedule
     ));
@@ -425,8 +425,8 @@ Environmental Training Certification
   };
 
   const updateOrderStatus = (orderId: string, newStatus: 'pending' | 'shipped' | 'delivered') => {
-    setOrders(prev => prev.map(order => 
-      order.id === orderId 
+    setOrders(prev => prev.map(order =>
+      order.id === orderId
         ? { ...order, status: newStatus }
         : order
     ));
@@ -479,7 +479,7 @@ Environmental Training Certification
 
   // Login Page Component
   const LoginPage = () => (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       className="flex flex-col items-center justify-center min-h-[80vh] p-4"
@@ -503,7 +503,7 @@ Environmental Training Certification
               onChange={(e) => setLoginForm(prev => ({ ...prev, name: e.target.value }))}
             />
           </div>
-          
+
           <div className="space-y-2">
             <Label htmlFor="email">Email Address</Label>
             <Input
@@ -545,7 +545,7 @@ Environmental Training Certification
           </div>
 
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-            <Button 
+            <Button
               onClick={handleLogin}
               className="w-full h-12 bg-green-600 hover:bg-green-700"
               size="lg"
@@ -560,7 +560,7 @@ Environmental Training Certification
 
   // Citizen Dashboard Component
   const CitizenDashboard = () => (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       className="space-y-6"
@@ -603,7 +603,7 @@ Environmental Training Certification
             </CardHeader>
             <CardContent>
               <div className="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center hover:bg-gray-800 transition-colors cursor-pointer"
-                   onClick={() => fileInputRef.current?.click()}>
+                onClick={() => fileInputRef.current?.click()}>
                 <Camera className="h-12 w-12 mx-auto mb-4 text-gray-500" />
                 <h4>Drop photo here or click to browse</h4>
                 <p className="text-muted-foreground mt-2">GPS location will be automatically captured</p>
@@ -840,7 +840,7 @@ Environmental Training Certification
                   <p className="text-3xl font-bold text-blue-400">{user.certificates.length}</p>
                 </div>
               </div>
-              
+
               <div className="grid gap-4 md:grid-cols-3">
                 <div className="text-center p-4 border rounded-lg">
                   <BookOpen className="h-8 w-8 mx-auto mb-2 text-blue-400" />
@@ -910,7 +910,7 @@ Environmental Training Certification
 
   // Green Champion Dashboard
   const GreenChampionDashboard = () => (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       className="space-y-6"
@@ -1159,7 +1159,7 @@ Environmental Training Certification
                     <Label htmlFor="eventLocation">Location</Label>
                     <Input id="eventLocation" placeholder="Enter event location" />
                   </div>
-                  <Button 
+                  <Button
                     onClick={() => {
                       const name = (document.getElementById('eventName') as HTMLInputElement)?.value;
                       const date = (document.getElementById('eventDate') as HTMLInputElement)?.value;
@@ -1259,9 +1259,8 @@ Environmental Training Certification
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className={`p-4 rounded-lg border ${
-                      report.status === 'pending' ? 'bg-yellow-900/20 border-yellow-600' : 'bg-green-900/20 border-green-600'
-                    }`}
+                    className={`p-4 rounded-lg border ${report.status === 'pending' ? 'bg-yellow-900/20 border-yellow-600' : 'bg-green-900/20 border-green-600'
+                      }`}
                   >
                     <div className="flex items-center justify-between">
                       <div>
@@ -1273,7 +1272,7 @@ Environmental Training Certification
                         <p className="text-sm text-muted-foreground">{report.timestamp}</p>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Badge 
+                        <Badge
                           variant={report.status === 'pending' ? 'destructive' : 'default'}
                           className={report.status === 'pending' ? 'bg-yellow-600 text-yellow-100' : 'bg-green-600 text-green-100'}
                         >
@@ -1298,7 +1297,7 @@ Environmental Training Certification
 
   // Plant Dashboard
   const PlantDashboard = () => (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       className="space-y-6"
@@ -1347,7 +1346,7 @@ Environmental Training Certification
     <div className="dark min-h-screen bg-gradient-to-br from-gray-900 to-gray-800">
       <div className="max-w-6xl mx-auto p-4">
         {/* Header */}
-        <motion.header 
+        <motion.header
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center py-8"
@@ -1357,7 +1356,7 @@ Environmental Training Certification
           </h1>
           <p className="text-muted-foreground">A platform for a cleaner, greener planet</p>
           {user.role && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="mt-4 flex flex-col items-center gap-3"
